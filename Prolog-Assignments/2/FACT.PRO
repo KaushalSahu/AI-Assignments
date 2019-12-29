@@ -1,0 +1,17 @@
+DOMAINS
+	N, X, N1, X1 = INTEGER
+	
+PREDICATES
+	FACT(INTEGER, INTEGER)
+	
+CLAUSES
+	FACT(1, X) :- 	WRITE("FACTORIAL : ", X) AND NL.
+	
+	FACT(N, X) :-	X1 = X * N,
+					N1 = N - 1,
+					FACT(N1, X1).
+					
+GOAL
+	WRITE("ENTER A VALUE : ") AND
+	READINT(N) AND
+	FACT(N, 1).

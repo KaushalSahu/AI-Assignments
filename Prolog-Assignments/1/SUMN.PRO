@@ -1,0 +1,16 @@
+DOMAINS
+	N, N1, X, X1 = INTEGER
+	
+	
+PREDICATES
+	SUMN(INTEGER, INTEGER)
+
+CLAUSES
+	SUMN(0, X) :- 	WRITE("SUM : ", X) AND NL.
+	SUMN(N, X) :-	X1 = X + N,
+		      	N1 = N - 1,
+		      	SUMN(N1, X1).
+GOAL
+	WRITE("ENTER A VALUE : ") AND
+	READINT(N) AND
+	SUMN(N, 0).
