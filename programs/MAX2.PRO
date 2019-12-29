@@ -1,0 +1,12 @@
+DOMAINS
+	N = INTEGER
+	
+PREDICATES 
+	FACTO(INTEGER,INTEGER)
+	
+CLAUSES
+	FACTO(0,X) :- WRITE("SUM = ",X).
+	FACTO(N,X) :- R=N MOD 10,
+		      N1=N/10,
+		      X1=X+R,
+		      FACTO(N1,X1).

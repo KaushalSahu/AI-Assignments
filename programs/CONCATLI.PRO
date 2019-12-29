@@ -1,0 +1,10 @@
+DOMAINS
+	LIST = SYMBOL*
+	
+PREDICATES
+	CONC(LIST,LIST)
+	
+CLAUSES
+	CONC([],[]) :- WRITE("COMPLETE").
+	CONC([],[X|L2]) :- WRITE(X," "), CONC([],L2).
+	CONC([X|L1],L2) :- WRITE(X," "), CONC(L1,L2).
